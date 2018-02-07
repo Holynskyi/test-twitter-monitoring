@@ -1,0 +1,16 @@
+%h1 Tweets
+
+%div
+	%ul.list-unstyled.lead.center-block
+		- @tweets.each do |tweet|
+			%li{style: "margin: 15px"}
+				%blockquote
+					%p= tweet.body.gsub(URI.regexp, '<a href="\0">\0</a>')
+					%footer 
+						= tweet.twittermen.name
+						= tweet.tweet_time.strftime("at %a, %d of %B, %Y, %H:%M")
+						%br
+						= tweet.retweet_count
+						%span.glyphicon.glyphicon-refresh{"aria-hidden" => "true"}
+						= tweet.favorite_count
+						%span.glyphicon.glyphicon.glyphicon-heart-empty{"aria-hidden" => "true"}

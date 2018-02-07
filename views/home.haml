@@ -1,0 +1,11 @@
+%p.lead
+  To find and subscribe to someone twitter just enter his name in the form below. For example "realDonaldTrump".
+
+%form.form-horizontal{:role => "form", :action => "/find_twitter_user", :method => "get"}
+  .form-group
+    %label.col-sm-2.control-label Enter twiiter name here
+    .col-sm-8
+      %input#inputEmail3.form-control{:name => "name", :placeholder => "twitter name", :type => "text"}
+  .form-group
+    .col-sm-offset-2.col-sm-8
+      %button.btn.btn-default{:type => "submit"} Find

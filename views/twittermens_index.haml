@@ -1,0 +1,8 @@
+%ul.lead
+  - @twittermens.each do |men|
+    %li
+      = men.name
+      %form{:action => "/twittermens/#{men.id}", :method => "post"}
+        %input{:name => "_method", :type => "hidden", :value => "delete"}
+        %input.btn.btn-danger.btn-xs{:type => "submit", :value => "Remove from the list"}
+            

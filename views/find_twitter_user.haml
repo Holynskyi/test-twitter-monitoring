@@ -1,0 +1,8 @@
+%p.lead
+  You found
+  = escape_html @twitter_user.name
+  !
+  You can add him to your list, just press the button below.
+  %form{:action => "/twittermens", :method => "post"}
+    %input{:name => "twittermen_short_name", :type => "hidden", :value => "#{@twitter_user.screen_name}"}
+    %input{:type => "submit", :value => "Add"}  
